@@ -2,8 +2,8 @@
   "name": "library-typescript-api",
   "version": "1.0.0",
   "scripts": {
-    "start": "node dist/server.js",
-    "dev": "ts-node-dev --respawn --transpileOnly src/server.ts",
+    "start": "node dist/main.js",
+    "dev": "ts-node-dev --respawn --transpileOnly src/main.ts",
     "build": "tsc"
   },
   "dependencies": {
