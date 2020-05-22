@@ -3,12 +3,14 @@ import 'express-async-errors';
 import cors from 'cors';
 
 import { logger, loggerMiddleware } from './libs';
+import { routes } from './routes';
 
 const server = express();
 
 server.use(express.json());
 server.use(cors());
 server.use(loggerMiddleware);
+server.use(routes);
 
 const start = async () => {
   try {
