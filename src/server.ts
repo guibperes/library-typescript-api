@@ -3,7 +3,7 @@ import 'express-async-errors';
 import cors from 'cors';
 
 import { logger, loggerMiddleware } from './libs';
-import { notFoundMiddleware } from './middlewares';
+import { notFoundMiddleware, errorMiddleware } from './middlewares';
 import { routes } from './routes';
 
 const server = express();
@@ -11,8 +11,9 @@ const server = express();
 server.use(express.json());
 server.use(cors());
 server.use(loggerMiddleware);
-server.use('*', notFoundMiddleware);
 server.use(routes);
+server.use('*', notFoundMiddleware);
+server.use(errorMiddleware);
 
 const start = async () => {
   try {
