@@ -1,3 +1,8 @@
+export interface HttpStatus {
+  name: string;
+  number: number;
+}
+
 export const HttpStatus = {
   CREATED: {
     name: 'Created',
